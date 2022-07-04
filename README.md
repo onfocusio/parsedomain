@@ -10,7 +10,7 @@ It is not always easy to split a hostname into subdomains, domains and top-level
 - The domain
 - A `[]string` of subdomains
 - A `[]string` of **effective** top-level domains
-- The type of Management*
+- The type of Management
     - **Unmanaged** (the hostname is valid but is not managed privately nor by ICANN, typically a custom entry in the hostfile of your computer)
     - **[ICANN](https://www.icann.org/) managed**
     - **Privately managed**
