@@ -1,0 +1,13 @@
+module github.com/onfocusio/parsedomain
+
+go 1.17
+
+require golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/stretchr/objx v0.4.0 // indirect
+	github.com/stretchr/testify v1.8.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)

@@ -1,0 +1,35 @@
+run:
+  skip-dirs:
+    - .github
+
+linters-settings:
+  gocyclo:
+    min-complexity: 15
+  gofmt:
+    simplify: true
+  misspell:
+    locale: US
+  govet:
+    disable:
+      - nilness
+    enable-all: true
+
+linters:
+  enable:
+    - gofmt
+    - revive
+    - gocyclo
+    - misspell
+    - bodyclose
+    - govet
+    - deadcode
+    - errcheck
+  disable-all: false
+  fast: false
+
+issues:
+  exclude-use-default: false
+  exclude:
+    - exported (.+) should have comment( \(or a comment on this block\))? or be unexported
+  max-issues-per-linter: 0
+  max-same-issues: 0
