@@ -49,6 +49,10 @@ func TestParseDomain(t *testing.T) {
 	testParseDomain(t, "extremelylongsubdomainiswaytoolonglongerthanthemaximumlabellength.example.org", nil, ErrLabelTooLong)
 	testParseDomain(t, "label.example.123", nil, ErrLastLabelNumeric)
 	testParseDomain(t, "label.example.123a", nil, ErrUnmanaged)
+
+	// IDN
+	testParseDomain(t, "rün.run", nil, ErrLabelInvalidCharacter)
+	testParseDomain(t, "xn--rn-xka.run", &Host{Hostname: "xn--rn-xka.run", Domain: "xn--rn-xka", Management: ManagementICANN, Subdomains: []string{}, TopLevelDomains: []string{"run"}, Type: HostnameTypeDomain}, nil)
 }
 
 func TestLabelErrors(t *testing.T) {

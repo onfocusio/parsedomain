@@ -30,6 +30,7 @@ linters:
 issues:
   exclude-use-default: false
   exclude:
+    - should have a package comment
     - exported (.+) should have comment( \(or a comment on this block\))? or be unexported
   max-issues-per-linter: 0
   max-same-issues: 0
