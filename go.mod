@@ -1,10 +1,10 @@
 module github.com/onfocusio/parsedomain
 
-go 1.17
+go 1.23.0
 
 require (
 	github.com/stretchr/testify v1.8.0
-	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e
+	golang.org/x/net v0.41.0
 )
 
 require (
