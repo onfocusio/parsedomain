@@ -1,36 +1,62 @@
-run:
-  skip-dirs:
-    - .github
-
-linters-settings:
-  gocyclo:
-    min-complexity: 15
-  gofmt:
-    simplify: true
-  misspell:
-    locale: US
-  govet:
-    disable:
-      - nilness
-    enable-all: true
-
+version: "2"
 linters:
   enable:
-    - gofmt
-    - revive
+    - copyloopvar
     - gocyclo
+    - inamedparam
     - misspell
-    - bodyclose
+    - revive
+    - testifylint
+    - whitespace
     - govet
-    - deadcode
+    - unused
     - errcheck
-  disable-all: false
-  fast: false
-
+    - ineffassign
+    - staticcheck
+  settings:
+    gocyclo:
+      min-complexity: 15
+    govet:
+      enable-all: true
+    misspell:
+      locale: US
+    testifylint:
+      disable:
+        - require-error
+        - error-nil
+        - formatter
+        - encoded-compare
+    staticcheck:
+      checks: ["all", "-QF1001"]
+    revive:
+      rules:
+        - name: use-any
+          disabled: false
+  exclusions:
+    generated: strict
+    rules:
+      - linters:
+          - gocyclo
+        path: _test\.go
+      - path: (.+)\.go$
+        text: should have a package comment
+      - path: (.+)\.go$
+        text: exported (.+) should have comment( \(or a comment on this block\))? or be unexported
+    paths:
+      - .github
+      - third_party$
+      - builtin$
+      - examples$
 issues:
-  exclude-use-default: false
-  exclude:
-    - should have a package comment
-    - exported (.+) should have comment( \(or a comment on this block\))? or be unexported
   max-issues-per-linter: 0
   max-same-issues: 0
+formatters:
+  enable:
+    - gofmt
+  settings:
+    gofmt:
+      simplify: true
+  exclusions:
+    generated: strict
+    paths:
+      - .github
