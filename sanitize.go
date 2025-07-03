@@ -20,15 +20,15 @@ var (
 	invalidDomainCharatersRegex = regexp.MustCompile(`(?i)[^\da-z-]`)
 	lettersAndDashRegex         = regexp.MustCompile(`(?i)[a-z-]`)
 
-	ErrDomainTooLong         = fmt.Errorf("Domain is too long. Maximum length is %d, got", maxDomainLength)
-	ErrReservedDomain        = fmt.Errorf("Domain is reserved")
-	ErrLabelInvalidCharacter = fmt.Errorf("Invalid character(s) found in label")
-	ErrLabelStartsWithDash   = fmt.Errorf("Labels cannot start with a dash")
-	ErrLabelEndsWithDash     = fmt.Errorf("Labels cannot end with a dash")
-	ErrLabelTooShort         = fmt.Errorf("Label is too short. Minimum length is %d, got", minLabelLength)
-	ErrLabelTooLong          = fmt.Errorf("Label is too long. Maximum length is %d, got", maxLabelLength)
-	ErrLastLabelNumeric      = fmt.Errorf("Last label must not be all-numeric. Got")
-	ErrUnmanaged             = fmt.Errorf("Unmanaged hostname")
+	ErrDomainTooLong         = fmt.Errorf("domain is too long. Maximum length is %d, got", maxDomainLength)
+	ErrReservedDomain        = fmt.Errorf("domain is reserved")
+	ErrLabelInvalidCharacter = fmt.Errorf("invalid character(s) found in label")
+	ErrLabelStartsWithDash   = fmt.Errorf("labels cannot start with a dash")
+	ErrLabelEndsWithDash     = fmt.Errorf("labels cannot end with a dash")
+	ErrLabelTooShort         = fmt.Errorf("label is too short. Minimum length is %d, got", minLabelLength)
+	ErrLabelTooLong          = fmt.Errorf("label is too long. Maximum length is %d, got", maxLabelLength)
+	ErrLastLabelNumeric      = fmt.Errorf("last label must not be all-numeric. Got")
+	ErrUnmanaged             = fmt.Errorf("unmanaged hostname")
 
 	reservedTopDomains = map[string]struct{}{
 		"":          {},

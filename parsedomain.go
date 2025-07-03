@@ -31,7 +31,6 @@ type Host struct {
 }
 
 func Parse(hostname string) (*Host, error) {
-
 	hostnameType, labels, err := sanitize(hostname)
 	if err != nil {
 		return nil, err

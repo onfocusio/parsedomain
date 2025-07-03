@@ -100,20 +100,20 @@ func main() {
 &parsedomain.Host{Hostname:"golang.dev", Domain:"golang", Management:"ICANN Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"dev"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"golang.net", Domain:"golang", Management:"ICANN Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"net"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"play.golang.org", Domain:"golang", Management:"ICANN Managed", Subdomains:[]string{"play"}, TopLevelDomains:[]string{"org"}, Type:parsedomain.HostnameTypeDomain}
-&parsedomain.Host{Hostname:"gophers.in.space.museum", Domain:"in", Management:"ICANN Managed", Subdomains:[]string{"gophers"}, TopLevelDomains:[]string{"space", "museum"}, Type:parsedomain.HostnameTypeDomain}
+&parsedomain.Host{Hostname:"gophers.in.space.museum", Domain:"space", Management:"ICANN Managed", Subdomains:[]string{"gophers", "in"}, TopLevelDomains:[]string{"museum"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"0emm.com", Domain:"0emm", Management:"ICANN Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"com"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"a.0emm.com", Domain:"0emm", Management:"Privately Managed", Subdomains:[]string{"a"}, TopLevelDomains:[]string{"com"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"b.c.d.0emm.com", Domain:"c", Management:"Privately Managed", Subdomains:[]string{"b"}, TopLevelDomains:[]string{"d", "0emm", "com"}, Type:parsedomain.HostnameTypeDomain}
-Invalid hostname "there.is.no.such-tld". Error: Unmanaged hostname: "there.is.no.such-tld"
+Invalid hostname "there.is.no.such-tld". Error: unmanaged hostname: "there.is.no.such-tld"
 &parsedomain.Host{Hostname:"foo.org", Domain:"foo", Management:"ICANN Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"org"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"foo.co.uk", Domain:"foo", Management:"ICANN Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"co", "uk"}, Type:parsedomain.HostnameTypeDomain}
 &parsedomain.Host{Hostname:"foo.dyndns.org", Domain:"foo", Management:"Privately Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"dyndns", "org"}, Type:parsedomain.HostnameTypeDomain}
-&parsedomain.Host{Hostname:"foo.blogspot.co.uk", Domain:"foo", Management:"Privately Managed", Subdomains:[]string{}, TopLevelDomains:[]string{"blogspot", "co", "uk"}, Type:parsedomain.HostnameTypeDomain}
-Invalid hostname "cromulent". Error: Unmanaged hostname: "cromulent"
-Invalid hostname "foo.example.com.". Error: Unmanaged hostname: "foo.example.com."
+&parsedomain.Host{Hostname:"foo.blogspot.co.uk", Domain:"blogspot", Management:"ICANN Managed", Subdomains:[]string{"foo"}, TopLevelDomains:[]string{"co", "uk"}, Type:parsedomain.HostnameTypeDomain}
+Invalid hostname "cromulent". Error: unmanaged hostname: "cromulent"
+Invalid hostname "foo.example.com.". Error: unmanaged hostname: "foo.example.com."
 &parsedomain.Host{Hostname:"127.0.0.1", Domain:"", Management:"", Subdomains:[]string(nil), TopLevelDomains:[]string(nil), Type:parsedomain.HostnameTypeIP}
 &parsedomain.Host{Hostname:"0000:0000:0000:0000:0000:0000:0000:0001", Domain:"", Management:"", Subdomains:[]string(nil), TopLevelDomains:[]string(nil), Type:parsedomain.HostnameTypeIP}
-Invalid hostname "localhost". Error: Domain is reserved: "localhost"
-Invalid hostname "". Error: Domain is reserved: ""
+Invalid hostname "localhost". Error: domain is reserved: "localhost"
+Invalid hostname "". Error: domain is reserved: ""
 ```
 </details>
